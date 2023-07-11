@@ -47,4 +47,6 @@ int list_contain_str(list_t* list, char* str);
 listnode_t * list_get_node_by_index(list_t * list, int index);
 void * list_remove_by_index(list_t * list, int index);
 
+listnode_t* list_insert_back2(list_t *list, void *val);
+
 #endif /*__LIST_H__*/

@@ -41,6 +41,20 @@ void list_insert_back(list_t *list, void *val)
     list->size++;
 }
 
+listnode_t* list_insert_back2(list_t *list, void *val)
+{
+    listnode_t *node = ZALLOC_TYPES(listnode_t);
+    node->prev = list->tail;
+    if(list->tail)
+        list->tail->next = node;
+    node->val = val;
+    if(!list->head)
+        list->head = node;
+    list->tail = node;
+    list->size++;
+    return node;
+}
+
 void * list_remove_front(list_t * list)
 {
     if(!list->head)
